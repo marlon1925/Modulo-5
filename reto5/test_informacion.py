@@ -3,9 +3,9 @@ import informacion
 print("============== PANCIENTES ==============")
 
 numero = int(input("Ingrese el número de pacientes: "))
-
+count = 1
 for i in range(numero):
-    count=+i+1
+    count+=i
     print(" ")
     print(f"Paciente {count}")
     nombre_paciente= input("Ingrese el nombre y apellido: ")
