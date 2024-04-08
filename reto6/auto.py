@@ -1,5 +1,5 @@
 
-class auto:
+class Auto:
     def __init__(self, marca, modelo, anio, kilometraje=0):
         self.marca = marca
         self.modelo = modelo
@@ -37,19 +37,28 @@ class auto:
         else:
             print("¡Ya déjame descansar por favor!")
 
-primerCarro = auto("Toyota", "Supra", "1998")
-
-print("METODO MOSTRA INFORMACION ")
-print(primerCarro.mostrar_informacion())
-print("")
-print("METODO ACTUALIZAR KILOMETRAJE ")
-kilometraje = float(input("Ingrese el kilometraje actual del vehiculo: "))
-primerCarro.actualizar_kilometraje(kilometraje)
-print("")
-print("METODO REALIZAR VIAJE ")
-kilometrajeViaje = float(input("Ingrese el kilometraje del viaje: "))
-primerCarro.realizar_viaje(kilometrajeViaje)
-print("")
-print("METODO ESTADO DEL AUTO ")
-print(primerCarro.estado_auto())
-
+    @classmethod
+    def toyota_autos(cls):
+        marca = "Toyota"
+        modelo = "Yaris"
+        anio = 2024
+        return cls(marca,modelo,anio)
+    
+    @classmethod
+    def kia_autos(cls):
+        marca = "Kia"
+        modelo = "Cerato"
+        anio = 2024
+        return cls(marca,modelo,anio)
+    
+    @staticmethod
+    def comparar_autos(kilometraje,kilometraje2):
+        if kilometraje == kilometraje2:
+            return "Tienen el mismo kilometraje"
+        return "No tienen el mismo kilometraje"
+    
+    @staticmethod
+    def anio_autos(anio,anio2):
+        if anio == anio2:
+            return "Tienen el mismo anio"
+        return "No tienen el mismo anio"
